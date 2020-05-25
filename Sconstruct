@@ -1,0 +1,10 @@
+compiler='g++'
+compilerVer='-std=c++11'
+srcDirectory='./src'
+includeDirectory='./include'
+srcfiles=Glob(srcDirectory+'/*.cpp')
+target='matrix'
+build=Environment(CXX=compiler,CPPFLAGS=compilerVer)
+build.Append(CPPPATH=[includeDirectory,])
+build.Append(CPPFLAGS=['-g',])
+build.Program(target,srcfiles)

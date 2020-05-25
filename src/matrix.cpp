@@ -1,8 +1,4 @@
-#include "matrix.h"
-
-Matrix::Matrix(){
-
-}
+#include "matrix.hpp"
 
 Matrix::Matrix(std::string setName, data_type setValues = {{0}}) :
     name(setName),
@@ -10,12 +6,8 @@ Matrix::Matrix(std::string setName, data_type setValues = {{0}}) :
 
 }
 
-Matrix::~Matrix(){
-
-}
-
 std::ostream &operator<<(std::ostream &os, Matrix &toPrint){
-    os << toPrint.name << '=' << std::endl;
+    os << toPrint.name << " =" << std::endl;
     os << std::showpoint;
     for(auto currentRow : toPrint.values){
         for(auto currentValue : currentRow){
@@ -47,6 +39,7 @@ Matrix & Matrix::operator+(const Matrix &addend){
 }
 
 Matrix & Matrix::operator-(const Matrix &substractor){
+
     std::string newName = this->name + " - " + substractor.name;
     static Matrix toReturn(newName);
     toReturn.values.clear();

@@ -12,9 +12,7 @@ private:
     data_type values;
 
 public:
-    Matrix();
     Matrix(std::string, data_type);
-    ~Matrix();
 
 
     friend std::ostream &operator<<(std::ostream &, Matrix &);
