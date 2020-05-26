@@ -11,5 +11,5 @@ public:
     InputAnalyzer();
     Matrix initiateDecompositon();
     std::string setID(std::string &);
-    data_type setValues(std::string &);
+    data_type setValues(std::string &){return {{0}};}
 };

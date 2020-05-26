@@ -12,6 +12,7 @@ private:
     data_type values_;
 
 public:
+    Matrix();
     Matrix(std::string, data_type);
 
 
