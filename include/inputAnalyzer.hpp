@@ -10,6 +10,6 @@ private:
 public:
     InputAnalyzer();
     Matrix initiateDecompositon();
-    std::string setID(std::string);
-    data_type setValues(std::string);
+    std::string setID(std::string &);
+    data_type setValues(std::string &);
 };
