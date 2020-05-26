@@ -3,7 +3,6 @@
 
 
 int main(){
-
     std::vector<Matrix> matrixVector; 
     Menu mainMenu;
 
@@ -14,7 +13,6 @@ int main(){
     Matrix matrix2("dabowanie", {{5,2,7},
                                  {7,5,3},
                                  {5,6,7}});
-
 
     matrixVector.push_back(matrix1);
     matrixVector.push_back(matrix2);
@@ -29,9 +27,7 @@ int main(){
     }
     catch(const int){ std::cout << "rozmiar" << std::endl;}
 
-
     mainMenu.initMenu(matrixVector);
-
 
     return 0;
 
