@@ -9,8 +9,7 @@ private:
 
 public:
     InputAnalyzer();
-    Matrix getNewMatrix();
     Matrix initiateDecompositon();
-    void setID(std::string);
-    void setValues(std::string);
+    std::string setID(std::string);
+    data_type setValues(std::string);
 };
