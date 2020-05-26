@@ -10,6 +10,9 @@ Matrix InputAnalyzer::initiateDecompositon(){
     std::vector<std::string> segmentatedString;
 
     getline(std::cin, rawInput);
+
+    if(rawInput.find('=') == std::string::npos) throw 1;
+
     segmentatedString.push_back(rawInput.substr(0, rawInput.find('=')));
     segmentatedString.push_back(rawInput.substr(rawInput.find('=') + 1));
 
@@ -28,8 +31,20 @@ data_type InputAnalyzer::setValues(std::string &rawDataString){
 
     while(getline(dataSS, temp, ';')) rowString.push_back(temp);
 
-    for(auto current : rowString) std::cout << current << std::endl;
+    for(auto current : rowString){
+        std::vector<double> rowValues;
+        std::string::size_type pos = 0;
+        double currentValue;
 
-    return {{0}};
-
+        while(true){
+            try{
+                currentValue = std::stod(current,  &pos);
+                rowValues.push_back(currentValue);
+                current.erase(0, pos);
+                }
+            catch(const std::invalid_argument end_of_values){break;}
+        }
+        values.push_back(rowValues);
+    }
+    return values;
 }

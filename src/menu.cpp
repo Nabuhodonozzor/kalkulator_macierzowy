@@ -26,7 +26,8 @@ void Menu::commandPerformer(std::vector<Matrix> &matrixVector, const unsigned sh
             for(auto current : matrixVector) std::cout << current << std::endl;
         break;
         case 2:
-            matrixVector.push_back(InputAnalyzer().initiateDecompositon());
+            try{matrixVector.push_back(InputAnalyzer().initiateDecompositon());}
+            catch(const int) {std::cout << "Could not find \'=\' symbol";}
         break;
         case 0: 
             std::cout << "Invalid input" << std::endl;
