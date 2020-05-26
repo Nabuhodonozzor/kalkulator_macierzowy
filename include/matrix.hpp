@@ -15,8 +15,7 @@ public:
     Matrix();
     Matrix(std::string, data_type);
 
-
-    friend std::ostream &operator<<(std::ostream &, Matrix &);
+    friend std::ostream & operator<<(std::ostream &, Matrix &);
     Matrix & operator+(const Matrix &);
     Matrix & operator-(const Matrix &);
 };
