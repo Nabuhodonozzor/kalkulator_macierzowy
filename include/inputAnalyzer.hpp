@@ -1,5 +1,6 @@
 #pragma once
 #include "matrix.hpp"
+#include <sstream>
 
 
 
@@ -11,5 +12,5 @@ public:
     InputAnalyzer();
     Matrix initiateDecompositon();
     std::string setID(std::string &);
-    data_type setValues(std::string &){return {{0}};}
+    data_type setValues(std::string &);
 };
