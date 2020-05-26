@@ -1,5 +1,9 @@
 #include "inputAnalyzer.hpp"
 
+InputAnalyzer::InputAnalyzer(){
+    
+}
+
 Matrix InputAnalyzer::initiateDecompositon(){
     std::string rawInput;
     std::vector<std::string> segmentatedString;
@@ -10,4 +14,8 @@ Matrix InputAnalyzer::initiateDecompositon(){
 
     Matrix newMatrix(setID(segmentatedString.at(0)), setValues(segmentatedString.at(1)));
     return newMatrix;
+}
+
+std::string InputAnalyzer::setID(std::string &rawIDstring){
+    return "";
 }

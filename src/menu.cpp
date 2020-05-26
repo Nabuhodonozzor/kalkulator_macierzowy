@@ -21,13 +21,12 @@ void Menu::initMenu(std::vector<Matrix> &matrixVector){
 
 
 void Menu::commandPerformer(std::vector<Matrix> &matrixVector, const unsigned short &intcommand){
-    InputAnalyzer analyzer;
     switch(intcommand){
         case 1:
             for(auto current : matrixVector) std::cout << current << std::endl;
         break;
         case 2:
-            matrixVector.push_back(analyzer.initiateDecompositon());
+            matrixVector.push_back(InputAnalyzer().initiateDecompositon());
         break;
         case 0: 
             std::cout << "Invalid input" << std::endl;
