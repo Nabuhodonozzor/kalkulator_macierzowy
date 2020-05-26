@@ -1,15 +1,18 @@
 #pragma once
+#include "matrix.hpp"
+#include "inputAnalyzer.hpp"
 #include <string>
 #include <iostream>
 #include <vector>
-#include "matrix.hpp"
+
 
 
 class Menu{
 private:
-    const std::string startupCommand;
-    const std::string printCommand;
-    const std::string exitCommand;
+    const std::string startupCommand_;
+    const std::string printCommand_;
+    const std::string addCommand_;
+    const std::string exitCommand_;
 
 public:
     Menu();
