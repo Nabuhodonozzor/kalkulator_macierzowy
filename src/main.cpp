@@ -11,8 +11,7 @@ int main(){
                              {7,8,9}});
 
     Matrix matrix2("dabowanie", {{5,2,7},
-                                 {7,5,3},
-                                 {5,6,7}});
+                                 {7,5,3}});
 
     matrixVector.push_back(matrix1);
     matrixVector.push_back(matrix2);
@@ -20,12 +19,12 @@ int main(){
     try{
         matrixVector.push_back(matrix2 + matrix1);
     }
-    catch(const int){ std::cout << "rozmiar" << std::endl;}
+    catch(unmatching_size us_add){ std::cout << us_add.what() << std::endl;}
 
     try{
         matrixVector.push_back(matrix2 - matrix1);
     }
-    catch(const int){ std::cout << "rozmiar" << std::endl;}
+    catch(unmatching_size us_sub){ std::cout << us_sub.what() << std::endl;}
 
     mainMenu.initMenu(matrixVector);
 

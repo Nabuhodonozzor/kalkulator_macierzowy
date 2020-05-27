@@ -39,7 +39,7 @@ Matrix & Matrix::operator+(const Matrix &addend){
         static Matrix toReturn(newName, values);
         return toReturn;
     }
-    else throw 1;
+    else throw unmatching_size();
 }
 
 Matrix & Matrix::operator-(const Matrix &substractor){
@@ -59,5 +59,5 @@ Matrix & Matrix::operator-(const Matrix &substractor){
         static Matrix toReturn(newName, values);
         return toReturn;
     }
-    else throw 1;
+    else throw unmatching_size();
 }
