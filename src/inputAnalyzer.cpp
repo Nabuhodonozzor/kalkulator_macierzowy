@@ -1,5 +1,4 @@
 #include "inputAnalyzer.hpp"
-#include <iostream>
 
 InputAnalyzer::InputAnalyzer(){
     
@@ -36,7 +35,7 @@ data_type InputAnalyzer::setValues(std::string &rawDataString){
         std::string::size_type pos = 0;
         double currentValue;
 
-        while(true){
+        while(pos != std::string::npos){
             try{
                 currentValue = std::stod(current,  &pos);
                 rowValues.push_back(currentValue);
