@@ -39,7 +39,7 @@ Matrix & Matrix::operator+(const Matrix &addend){
         static Matrix toReturn(newName, values);
         return toReturn;
     }
-    else throw unmatching_size();
+//    else throw unmatching_size(this->name_, this->values_.size(), this->values_.at(0).size() ,addend.name_, addend.values_.size(), addend.values_.at(0).size());
 }
 
 Matrix & Matrix::operator-(const Matrix &substractor){
@@ -59,5 +59,5 @@ Matrix & Matrix::operator-(const Matrix &substractor){
         static Matrix toReturn(newName, values);
         return toReturn;
     }
-    else throw unmatching_size();
+//   else throw unmatching_size(this -> name_, substractor.name_);
 }

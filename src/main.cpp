@@ -19,12 +19,12 @@ int main(){
     try{
         matrixVector.push_back(matrix2 + matrix1);
     }
-    catch(unmatching_size us_add){ std::cout << us_add.what() << std::endl;}
+    catch(unmatching_size &us_add){ std::cout << us_add.what() << std::endl;}
 
     try{
         matrixVector.push_back(matrix2 - matrix1);
     }
-    catch(unmatching_size us_sub){ std::cout << us_sub.what() << std::endl;}
+    catch(unmatching_size &us_sub){ std::cout << us_sub.what() << std::endl;}
 
     mainMenu.initMenu(matrixVector);
 

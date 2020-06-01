@@ -1,7 +1,7 @@
 #pragma once
-#include "matrix.hpp"
 #include <sstream>
 #include <stdexcept>
+#include "include/matrix.hpp"
 
 
 
