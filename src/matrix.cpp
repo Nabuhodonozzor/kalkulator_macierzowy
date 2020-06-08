@@ -1,8 +1,5 @@
 #include "matrix.hpp"
 
-Matrix::Matrix(){
-    
-}
 
 Matrix::Matrix(std::string setName, data_type setValues = {{0}}) :
     name_(setName),
@@ -51,11 +48,11 @@ Matrix & Matrix::operator+(const Matrix &addend){
         std::vector<size_t> thisDimensions = {thisRows, thisCols};
         std::vector<size_t> addendDimensions = {addendRows, addendCols};
 
-        throw unmatching_size(this->name_, thisDimensions, addend.name_, addendDimensions, '+');
+        throw unmatching_size(this->name_, thisDimensions, addend.name_, addendDimensions, "+");
     }
 }
 
-Matrix & Matrix::operator-(const Matrix &substractor){
+/* Matrix & Matrix::operator-(const Matrix &substractor){
 
     std::string newName = this->name_ + " - " + substractor.name_;
     std::vector<double> rowVect;
@@ -73,4 +70,4 @@ Matrix & Matrix::operator-(const Matrix &substractor){
         return toReturn;
     }
 //   else throw unmatching_size(this -> name_, substractor.name_);
-}
+} */

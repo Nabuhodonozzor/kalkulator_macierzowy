@@ -7,37 +7,30 @@ Menu::Menu() :
     exitCommand_("exit"){
 }
 
+Menu::~Menu(){
+    delete command_;
+}
+
 void Menu::initMenu(std::vector<Matrix> &matrixVector){
 
     std::string input;
+    matrixVect_ = matrixVector;
 
     while(true){
         std::cout << startupCommand_ << std::endl;
         getline(std::cin, input);
         if(input == exitCommand_) break;
-        commandPerformer(matrixVector, commandDeterminer(input));
+        commandDeterminer(input);
+        commandPerformer();
     }
 }
 
-
-void Menu::commandPerformer(std::vector<Matrix> &matrixVector, const unsigned short &intcommand){
-    switch(intcommand){
-        case 1:
-            for(auto current : matrixVector) std::cout << current << std::endl;
-        break;
-        case 2:
-            try{matrixVector.push_back(InputAnalyzer().initiateDecompositon());}
-            catch(const int) {std::cout << "Could not find \'=\' symbol";}
-        break;
-        case 0: 
-            std::cout << "Invalid input" << std::endl;
-        break; 
-    }
-    
+void Menu::commandPerformer(){
+    command_ -> execute(matrixVect_);
 }
 
-unsigned short Menu::commandDeterminer(const std::string &command){
-    if(command == printCommand_) return 1;
-    else if(command == addCommand_) return 2;
-    else return 0;  
+void Menu::commandDeterminer(const std::string &command){
+    if(command == printCommand_) command_ = new PrintCommand;
+    else if(command == addCommand_) command_ = new AddToVectorCommand;
+    else command_  = new NullCommand;  
 }

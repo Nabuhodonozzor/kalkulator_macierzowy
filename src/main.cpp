@@ -4,7 +4,6 @@
 
 int main(){
     std::vector<Matrix> matrixVector; 
-    Menu mainMenu;
 
     Matrix matrix1("adada", {{1,2,3},
                              {4,5,6},
@@ -26,7 +25,7 @@ int main(){
    // }
    // catch(unmatching_size &us_sub){ std::cout << us_sub.what() << std::endl;}
 
-    mainMenu.initMenu(matrixVector);
+    Menu().initMenu(matrixVector);
 
     return 0;
 

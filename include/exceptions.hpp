@@ -9,8 +9,8 @@ class unmatching_size : public std::exception{
     std::string secondID_;
     std::vector<unsigned> firstDimensions_;
     std::vector<unsigned> secondDimensions_;
-    char operand_;
+    std::string operand_;
 public:
-    unmatching_size(const std::string &, std::vector<size_t> &, const std::string &, std::vector<size_t> &, char);
+    unmatching_size(const std::string &, std::vector<size_t> &, const std::string &, std::vector<size_t> &, std::string);
     const std::string what();
 };

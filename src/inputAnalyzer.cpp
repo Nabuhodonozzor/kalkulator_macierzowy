@@ -1,10 +1,7 @@
 #include "inputAnalyzer.hpp"
 
-InputAnalyzer::InputAnalyzer(){
-    
-}
-
 Matrix InputAnalyzer::initiateDecompositon(){
+    
     std::string rawInput;
     std::vector<std::string> segmentatedString;
 
@@ -23,6 +20,7 @@ std::string InputAnalyzer::setID(std::string &rawIDstring){
 }
 
 data_type InputAnalyzer::setValues(std::string &rawDataString){
+
     std::vector<std::string> rowString;
     data_type values;
     std::stringstream dataSS(rawDataString);

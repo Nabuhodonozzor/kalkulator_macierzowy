@@ -1,9 +1,11 @@
 #pragma once
 #include "matrix.hpp"
 #include "inputAnalyzer.hpp"
+#include "command.hpp"
 #include <string>
 #include <iostream>
 #include <vector>
+#include <memory>
 
 
 
@@ -13,10 +15,13 @@ private:
     const std::string printCommand_;
     const std::string addCommand_;
     const std::string exitCommand_;
+    Command * command_;
+    std::vector<Matrix> matrixVect_;
 
 public:
     Menu();
+    ~Menu();
     void initMenu(std::vector<Matrix> &);
-    void commandPerformer(std::vector<Matrix> &, const unsigned short &);
-    unsigned short commandDeterminer(const std::string &);
+    void commandPerformer();
+    void commandDeterminer(const std::string &);
 };

@@ -3,7 +3,7 @@
 #include <vector>
 #include <iostream>
 #include <iomanip>
-#include "include/exceptions.hpp"
+#include "exceptions.hpp"
 
 using data_type = std::vector<std::vector<double>>;
 
@@ -13,7 +13,6 @@ private:
     data_type values_;
 
 public:
-    Matrix();
     Matrix(std::string, data_type);
 
     friend std::ostream & operator<<(std::ostream &, Matrix &);
