@@ -1,12 +1,8 @@
 #include "inputAnalyzer.hpp"
 
-Matrix InputAnalyzer::initiateDecompositon(){
+Matrix InputAnalyzer::initiateDecompositon(std::string & rawInput){
     
-    std::string rawInput;
     std::vector<std::string> segmentatedString;
-
-    std::cout << "Input: ";
-    getline(std::cin, rawInput);
 
     if(rawInput.find('=') == std::string::npos) throw 1;
 

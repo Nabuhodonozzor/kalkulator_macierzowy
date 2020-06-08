@@ -14,3 +14,11 @@ public:
     unmatching_size(const std::string &, std::vector<size_t> &, const std::string &, std::vector<size_t> &, std::string);
     const std::string what();
 };
+
+
+class file_open_error : public std::exception{
+    std::string errorFileName_;
+public:
+    file_open_error(std::string &);
+    const std::string what();
+};

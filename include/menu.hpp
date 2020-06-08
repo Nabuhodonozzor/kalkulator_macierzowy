@@ -9,6 +9,7 @@
 
 
 
+
 class Menu{
 private:
     const std::string startupCommand_;
@@ -21,9 +22,9 @@ private:
     std::vector<Matrix> matrixVect_;
 
 public:
-    Menu();
+    Menu(std::vector<Matrix> &);
     ~Menu();
-    void initMenu(std::vector<Matrix> &);
+    void initMenu();
     void commandPerformer();
     void commandDeterminer(const std::string &);
 };

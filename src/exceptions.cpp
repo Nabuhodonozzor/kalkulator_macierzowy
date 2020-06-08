@@ -1,5 +1,7 @@
 #include "exceptions.hpp"
 
+// unmatching_size exception
+
 unmatching_size::unmatching_size(const std::string & firstID, std::vector<size_t> & firstDimensions, const std::string & secondID, std::vector<size_t> & secondDimensions, std::string operand) :
     firstID_(firstID),
     firstDimensions_(firstDimensions),
@@ -8,7 +10,6 @@ unmatching_size::unmatching_size(const std::string & firstID, std::vector<size_t
     operand_(operand){
 
 }
-
 
 const std::string unmatching_size::what(){
 
@@ -19,4 +20,14 @@ const std::string unmatching_size::what(){
     auto returnStr = matrixIfno + errorInfo;
 
     return returnStr;
+}
+
+//=============================================================
+
+//file_open_error
+
+file_open_error::file_open_error(std::string & errorFileName) : errorFileName_(errorFileName){}
+
+const std::string file_open_error::what(){
+    return "Error when openieng a file: " + errorFileName_;
 }

@@ -1,6 +1,7 @@
 #include "menu.hpp"
 
-Menu::Menu() : 
+Menu::Menu(std::vector<Matrix> &matrixVector) : 
+    matrixVect_(matrixVector),
     startupCommand_("Matrix Calculator"),
     printCommand_("print all"),
     addCommand_("add"),
@@ -13,10 +14,9 @@ Menu::~Menu(){
     delete command_;
 }
 
-void Menu::initMenu(std::vector<Matrix> &matrixVector){  //initalising menu and the working loop
+void Menu::initMenu(){  //initalising menu and the working loop
 
     std::string input;
-    matrixVect_ = matrixVector;
 
     while(true){
         std::cout << startupCommand_ << "\n\t>";
@@ -28,7 +28,12 @@ void Menu::initMenu(std::vector<Matrix> &matrixVector){  //initalising menu and 
 }
 
 void Menu::commandPerformer(){
-    command_ -> execute(matrixVect_);  //dynamic polymorphism (command pattern)
+    try{
+        command_ -> execute(matrixVect_);      //dynamic polymorphism (command pattern)
+    }
+    catch(file_open_error & foe){
+        std::cout << foe.what() << std::endl;
+    }
 }
 
 void Menu::commandDeterminer(const std::string &command){                   //determinig what operation to perform

@@ -8,7 +8,7 @@
 class InputAnalyzer{
 
 public:
-    Matrix initiateDecompositon();
+    Matrix initiateDecompositon(std::string &);
     std::string setID(std::string &);
     data_type setValues(std::string &);
 };

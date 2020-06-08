@@ -1,5 +1,9 @@
 #include "command.hpp"
 
+Command::~Command(){
+
+}
+
 void PrintCommand::execute(std::vector<Matrix> & matrixVect){
     std::cout << std::endl;
     for(auto current : matrixVect){
@@ -16,15 +20,48 @@ void PrintCommand::execute(std::vector<Matrix> & matrixVect){
 }
 
 void AddToVectorCommand::execute(std::vector<Matrix> & matrixVect){
-    matrixVect.push_back(InputAnalyzer().initiateDecompositon());
+
+    std::string rawInput;
+    std::cout << "Input: ";
+    getline(std::cin, rawInput);
+
+    matrixVect.push_back(InputAnalyzer().initiateDecompositon(rawInput));
 }
 
 void SaveCommand::execute(std::vector<Matrix> & matrixVect){
-    std::cout << "save" << std::endl;
+
+    std::string filename("savefile.txt");
+    std::ofstream file;
+    file.open(filename, std::ios::out);
+
+    if(file.is_open()){
+        for(auto current : matrixVect){
+            file << current.getName() << " = ";
+            for(auto currentRow : current.getValues()){
+                for(auto currentValue : currentRow){
+                    file << currentValue << ' ';
+                }
+                file << ';';
+            }
+            file << std::endl;
+        }
+        file.close();
+    }
+    else throw file_open_error(filename);
 }
 
 void LoadCommand::execute(std::vector<Matrix> & matrixVect){
-    std::cout << "load" << std::endl;
+    
+    std::string currentlyLoaded, filename("savefile.txt");
+    std::ifstream file;
+    file.open(filename, std::ios::in);
+
+    if(file.is_open()){
+        while(getline(file, currentlyLoaded)){
+            matrixVect.push_back(InputAnalyzer().initiateDecompositon(currentlyLoaded));
+        }
+    }
+    else throw file_open_error(filename);
 }
 
 void NullCommand::execute(std::vector<Matrix> & matrixVect){

@@ -4,7 +4,7 @@
 Matrix::Matrix(std::string setName, data_type setValues = {{0}}) :
     name_(setName),
     values_(setValues){
-
+        
 }
 
 data_type Matrix::getValues(){
