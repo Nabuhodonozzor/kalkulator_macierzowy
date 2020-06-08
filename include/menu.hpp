@@ -15,6 +15,8 @@ private:
     const std::string printCommand_;
     const std::string addCommand_;
     const std::string exitCommand_;
+    const std::string saveCommand_;
+    const std::string loadCommand_;
     Command * command_;
     std::vector<Matrix> matrixVect_;
 

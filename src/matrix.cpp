@@ -7,35 +7,31 @@ Matrix::Matrix(std::string setName, data_type setValues = {{0}}) :
 
 }
 
-std::ostream &operator<<(std::ostream &os, Matrix &toPrint){
-    os << toPrint.name_ << " =" << std::endl;
-    os << std::showpoint;
-    for(auto currentRow : toPrint.values_){
-        for(auto currentValue : currentRow){
-            os << std::setprecision(3) << std::setw(5) << currentValue << ' ';
-        }
-        os << std::endl;
-    }
-    return os;
+data_type Matrix::getValues(){
+    return values_;
 }
 
-Matrix & Matrix::operator+(const Matrix &addend){
+std::string Matrix::getName(){
+    return name_;
+}
+
+Matrix & Matrix::operator+(const Matrix &rightElement){
 
     auto thisRows = this->values_.size();
     auto thisCols = this->values_.at(0).size();
 
-    auto addendRows = addend.values_.size();
-    auto addendCols = addend.values_.at(0).size();
+    auto addendRows = rightElement.values_.size();
+    auto addendCols = rightElement.values_.at(0).size();
 
     if((thisRows == addendRows) && (thisCols == addendCols)){
 
-        auto newName = this->name_ + " + " + addend.name_;
+        auto newName = this->name_ + " + " + rightElement.name_;
         std::vector<double> rowVect;
         data_type values;
 
         for(auto i = 0; i < thisRows; i++){ 
             for(auto j = 0; j < thisCols; j++){
-                rowVect.push_back(this->values_.at(i).at(j) + addend.values_.at(i).at(j));
+                rowVect.push_back(this->values_.at(i).at(j) + rightElement.values_.at(i).at(j));
             }
             values.push_back(rowVect);
             rowVect.clear();
@@ -48,7 +44,7 @@ Matrix & Matrix::operator+(const Matrix &addend){
         std::vector<size_t> thisDimensions = {thisRows, thisCols};
         std::vector<size_t> addendDimensions = {addendRows, addendCols};
 
-        throw unmatching_size(this->name_, thisDimensions, addend.name_, addendDimensions, "+");
+        throw unmatching_size(this->name_, thisDimensions, rightElement.name_, addendDimensions, "+");
     }
 }
 

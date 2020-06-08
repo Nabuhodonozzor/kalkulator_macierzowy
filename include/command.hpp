@@ -8,7 +8,15 @@ public:
 };
 
 class PrintCommand : public Command{
+    void execute(std::vector<Matrix> &) override;
+};
+
+class SaveCommand : public Command{
     void execute(std::vector<Matrix> &);
+};
+
+class LoadCommand : public Command{
+    void execute(std::vector<Matrix> &);   
 };
 
 class AddToVectorCommand : public Command{
