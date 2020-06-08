@@ -12,6 +12,10 @@ int main(){
     Matrix matrix2("dabowanie", {{5,2,7},
                                  {7,5,3}});
 
+    Matrix matrix3("essa", {{2,6,8},
+                            {4,7,2},
+                            {9,6,4}});
+
     matrixVector.push_back(matrix1);
     matrixVector.push_back(matrix2);
 
@@ -19,6 +23,12 @@ int main(){
         matrixVector.push_back(matrix2 + matrix1);
     }
     catch(unmatching_size &us_add){ std::cout << us_add.what() << std::endl;}
+
+    try{
+        matrixVector.push_back(matrix1 + matrix3);
+    }
+    catch(unmatching_size &us_add){ std::cout << us_add.what() << std::endl;}
+
 
    // try{
    //     matrixVector.push_back(matrix2 - matrix1);
