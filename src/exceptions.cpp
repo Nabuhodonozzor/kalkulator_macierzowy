@@ -2,7 +2,7 @@
 
 // unmatching_size exception
 
-unmatching_size::unmatching_size(const std::string & firstID, std::vector<size_t> & firstDimensions, const std::string & secondID, std::vector<size_t> & secondDimensions, std::string operand) :
+unmatching_size::unmatching_size(const std::string & firstID, std::array<size_t, 2> & firstDimensions, const std::string & secondID, std::array<size_t, 2> & secondDimensions, std::string operand) :
     firstID_(firstID),
     firstDimensions_(firstDimensions),
     secondID_(secondID),

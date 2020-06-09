@@ -3,6 +3,7 @@
 #include <vector>
 #include <iostream>
 #include <iomanip>
+#include <array>
 #include "exceptions.hpp"
 
 using data_type = std::vector<std::vector<double>>;

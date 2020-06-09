@@ -41,8 +41,8 @@ Matrix & Matrix::operator+(const Matrix &rightElement){
     }
     else{
 
-        std::vector<size_t> thisDimensions = {thisRows, thisCols};
-        std::vector<size_t> addendDimensions = {addendRows, addendCols};
+        std::array<size_t, 2> thisDimensions = {thisRows, thisCols};
+        std::array<size_t, 2> addendDimensions = {addendRows, addendCols};
 
         throw unmatching_size(this->name_, thisDimensions, rightElement.name_, addendDimensions, "+");
     }
