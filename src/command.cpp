@@ -1,10 +1,9 @@
 #include "command.hpp"
 
-Command::~Command(){
-
-}
+Command::~Command(){}
 
 void PrintCommand::execute(std::vector<Matrix> & matrixVect){
+
     std::cout << std::endl;
     for(auto current : matrixVect){
         std::cout << current.getName() << '=' << std::endl;
@@ -22,10 +21,13 @@ void PrintCommand::execute(std::vector<Matrix> & matrixVect){
 void AddToVectorCommand::execute(std::vector<Matrix> & matrixVect){
 
     std::string rawInput;
+
     std::cout << "Input: ";
     getline(std::cin, rawInput);
 
-    matrixVect.push_back(InputAnalyzer().initiateDecompositon(rawInput));
+    auto matrixToAdd = InputAnalyzer().initiateDecompositon(rawInput);
+    
+    matrixVect.push_back(DataConverter().fillBlank(matrixToAdd));
 }
 
 void SaveCommand::execute(std::vector<Matrix> & matrixVect){

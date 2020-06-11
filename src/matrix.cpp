@@ -15,23 +15,28 @@ std::string Matrix::getName(){
     return name_;
 }
 
-Matrix & Matrix::operator+(const Matrix &rightElement){
+Matrix & sub_add(const Matrix &leftElement, const Matrix &rightElement, unsigned operation){
 
-    auto thisRows = this->values_.size();
-    auto thisCols = this->values_.at(0).size();
+    auto leftRows = leftElement.values_.size();
+    auto leftCols = leftElement.values_.at(0).size();
 
-    auto addendRows = rightElement.values_.size();
-    auto addendCols = rightElement.values_.at(0).size();
+    auto rightRows = rightElement.values_.size();
+    auto rightCols = rightElement.values_.at(0).size();
 
-    if((thisRows == addendRows) && (thisCols == addendCols)){
+    std::string operation_char;
+    if(operation == 0) operation_char = '+';
+    else if(operation == 1) operation_char = '-';
 
-        auto newName = this->name_ + " + " + rightElement.name_;
+    if((leftRows == rightRows) && (leftCols == rightCols)){
+
+        auto newName = leftElement.name_ + " " + operation_char + " " + rightElement.name_;
         std::vector<double> rowVect;
         data_type values;
 
-        for(auto i = 0; i < thisRows; i++){ 
-            for(auto j = 0; j < thisCols; j++){
-                rowVect.push_back(this->values_.at(i).at(j) + rightElement.values_.at(i).at(j));
+        for(auto i = 0; i < leftRows; i++){ 
+            for(auto j = 0; j < leftCols; j++){
+                if(operation == 0)      rowVect.push_back(leftElement.values_.at(i).at(j) + rightElement.values_.at(i).at(j));
+                else if(operation == 1) rowVect.push_back(leftElement.values_.at(i).at(j) - rightElement.values_.at(i).at(j));
             }
             values.push_back(rowVect);
             rowVect.clear();
@@ -41,29 +46,10 @@ Matrix & Matrix::operator+(const Matrix &rightElement){
     }
     else{
 
-        std::array<size_t, 2> thisDimensions = {thisRows, thisCols};
-        std::array<size_t, 2> addendDimensions = {addendRows, addendCols};
+        std::array<size_t, 2> leftDimensions = {leftRows, leftCols};
+        std::array<size_t, 2> rightDimensions = {rightRows, rightCols};
 
-        throw unmatching_size(this->name_, thisDimensions, rightElement.name_, addendDimensions, "+");
+        throw unmatching_size(leftElement.name_, leftDimensions, rightElement.name_, rightDimensions, operation_char);
     }
 }
 
-/* Matrix & Matrix::operator-(const Matrix &substractor){
-
-    std::string newName = this->name_ + " - " + substractor.name_;
-    std::vector<double> rowVect;
-    data_type values;
-
-    if((this->values_.size() == substractor.values_.size()) && (this->values_.at(0).size() == substractor.values_.at(0).size())){
-        for(auto i = 0; i < this->values_.size(); i++){ 
-            for(auto j = 0; j < this->values_.at(0).size(); j++){
-                rowVect.push_back(this->values_.at(i).at(j) - substractor.values_.at(i).at(j));
-            }
-            values.push_back(rowVect);
-            rowVect.clear();
-        }
-        static Matrix toReturn(newName, values);
-        return toReturn;
-    }
-//   else throw unmatching_size(this -> name_, substractor.name_);
-} */

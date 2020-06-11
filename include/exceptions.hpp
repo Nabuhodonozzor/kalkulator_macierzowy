@@ -12,6 +12,7 @@ class unmatching_size : public std::exception{
     std::string operand_;
 public:
     unmatching_size(const std::string &, std::array<size_t, 2> &, const std::string &, std::array<size_t, 2> &, std::string);
+
     const std::string what();
 };
 
@@ -20,5 +21,6 @@ class file_open_error : public std::exception{
     std::string errorFileName_;
 public:
     file_open_error(std::string &);
+    
     const std::string what();
 };

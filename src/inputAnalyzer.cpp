@@ -26,6 +26,7 @@ data_type InputAnalyzer::setValues(std::string &rawDataString){
     while(getline(dataSS, temp, ';')) rowString.push_back(temp);
 
     for(auto current : rowString){
+        
         std::vector<double> rowValues;
         std::string::size_type pos = 0;
         double currentValue;

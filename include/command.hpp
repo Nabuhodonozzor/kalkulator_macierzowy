@@ -1,6 +1,7 @@
 #pragma once 
 #include "matrix.hpp"
 #include "inputAnalyzer.hpp"
+#include "dataConverter.hpp"
 #include <fstream>
 #include <exception>
 
