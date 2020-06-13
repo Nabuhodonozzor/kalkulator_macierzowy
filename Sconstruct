@@ -1,5 +1,5 @@
 compiler='g++'
-compilerVer='-std=c++11'
+compilerVer='-std=c++17'
 srcDirectory='./src'
 includeDirectory='./include'
 srcfiles=Glob(srcDirectory+'/*.cpp')
