@@ -18,7 +18,7 @@ private:
     const std::string exitCommand_;
     const std::string saveCommand_;
     const std::string loadCommand_;
-    Command * command_;
+    std::unique_ptr<Command> command_;
     std::vector<Matrix> matrixVect_;
 
 public:

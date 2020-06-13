@@ -11,7 +11,7 @@ Menu::Menu(std::vector<Matrix> &matrixVector) :
 }
 
 Menu::~Menu(){
-    delete command_;
+//    delete command_;
 }
 
 void Menu::initMenu(){  //initalising menu and the working loop
@@ -37,9 +37,9 @@ void Menu::commandPerformer(){
 }
 
 void Menu::commandDeterminer(const std::string &command){                   //determinig what operation to perform
-    if(command == printCommand_)        command_ = new PrintCommand;
-    else if(command == addCommand_)     command_ = new AddToVectorCommand;
-    else if(command == saveCommand_)    command_ = new SaveCommand;
-    else if(command == loadCommand_)    command_ = new LoadCommand;
-    else                                command_ = new NullCommand;  
+    if(command == printCommand_)        command_ = std::make_unique<PrintCommand>();
+    else if(command == addCommand_)     command_ = std::make_unique<AddToVectorCommand>();
+    else if(command == saveCommand_)    command_ = std::make_unique<SaveCommand>();
+    else if(command == loadCommand_)    command_ = std::make_unique<LoadCommand>();
+    else                                command_ = std::make_unique<NullCommand>();
 }
