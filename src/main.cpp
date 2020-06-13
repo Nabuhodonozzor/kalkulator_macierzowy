@@ -18,21 +18,22 @@ int main(){
 
     matrixVector.push_back(matrix1);
     matrixVector.push_back(matrix2);
+    matrixVector.push_back(matrix3);
 
     try{
-        matrixVector.push_back(matrix2 + matrix1);
+        matrixVector.push_back(sub_add(matrix1, matrix2, 0));
     }
-    catch(unmatching_size &us_add){ std::cout << us_add.what() << std::endl;}
+    catch(unmatching_size &us_add){std::cout << us_add.what() << std::endl;}
 
     try{
-        matrixVector.push_back(matrix1 + matrix3);
+        matrixVector.push_back(sub_add(matrix1, matrix3, 0));
     }
-    catch(unmatching_size &us_add){ std::cout << us_add.what() << std::endl;}
+    catch(unmatching_size &us_add){std::cout << us_add.what() << std::endl;}
 
-   // try{
-   //     matrixVector.push_back(matrix2 - matrix1);
-   // }
-   // catch(unmatching_size &us_sub){ std::cout << us_sub.what() << std::endl;}
+    try{
+        matrixVector.push_back(sub_add(matrix1, matrix3, 1));
+    }
+    catch(unmatching_size &us_add){std::cout << us_add.what() << std::endl;}
 
     Menu(matrixVector).initMenu();
 

@@ -12,7 +12,7 @@ public:
 };
 
 class PrintCommand : public Command{
-    void execute(std::vector<Matrix> &) override;
+    void execute(std::vector<Matrix> &);
 };
 
 class SaveCommand : public Command{

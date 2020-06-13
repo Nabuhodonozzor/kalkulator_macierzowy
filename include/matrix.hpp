@@ -16,7 +16,7 @@ private:
 public:
     Matrix(std::string, data_type);
 
-    friend Matrix & sub_add(const Matrix &, const Matrix &, unsigned);
+    friend Matrix sub_add(const Matrix &, const Matrix &, unsigned);
 
     data_type getValues();
     std::string getName();

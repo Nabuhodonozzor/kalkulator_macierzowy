@@ -26,8 +26,9 @@ void AddToVectorCommand::execute(std::vector<Matrix> & matrixVect){
     getline(std::cin, rawInput);
 
     auto matrixToAdd = InputAnalyzer().initiateDecompositon(rawInput);
+    auto ajustedMatrix = DataConverter().fillBlank(matrixToAdd);
     
-    matrixVect.push_back(DataConverter().fillBlank(matrixToAdd));
+    matrixVect.push_back(ajustedMatrix);
 }
 
 void SaveCommand::execute(std::vector<Matrix> & matrixVect){

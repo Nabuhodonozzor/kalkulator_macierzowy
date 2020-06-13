@@ -7,8 +7,8 @@
 class unmatching_size : public std::exception{
     std::string firstID_;
     std::string secondID_;
-    std::array<unsigned, 2> firstDimensions_;
-    std::array<unsigned, 2> secondDimensions_;
+    std::array<size_t, 2> firstDimensions_;
+    std::array<size_t, 2> secondDimensions_;
     std::string operand_;
 public:
     unmatching_size(const std::string &, std::array<size_t, 2> &, const std::string &, std::array<size_t, 2> &, std::string);
