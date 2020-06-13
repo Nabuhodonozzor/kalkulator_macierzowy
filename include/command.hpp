@@ -2,8 +2,10 @@
 #include "matrix.hpp"
 #include "inputAnalyzer.hpp"
 #include "dataConverter.hpp"
+#include "exceptions.hpp"
+#include <iomanip>
+#include <iostream>
 #include <fstream>
-#include <exception>
 
 class Command{
 public:
