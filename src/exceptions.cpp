@@ -31,3 +31,11 @@ file_open_error::file_open_error(std::string & errorFileName) : errorFileName_(e
 const std::string file_open_error::what(){
     return "Error when openieng a file: " + errorFileName_;
 }
+
+//===============================================================
+
+//bad_equals
+
+const std::string bad_equals::what(){
+    return "Couldn't find \'=\' symbol.";
+}

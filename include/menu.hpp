@@ -23,7 +23,6 @@ private:
 
 public:
     Menu(std::vector<Matrix> &);
-    ~Menu();
     void initMenu();
     void commandPerformer();
     void commandDeterminer(const std::string &);

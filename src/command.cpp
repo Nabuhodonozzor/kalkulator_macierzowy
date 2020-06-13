@@ -25,6 +25,8 @@ void AddToVectorCommand::execute(std::vector<Matrix> & matrixVect){
     std::cout << "Input: ";
     getline(std::cin, rawInput);
 
+    if(rawInput.find('=') == std::string::npos) throw bad_equals();
+
     auto matrixToAdd = InputAnalyzer().initiateDecompositon(rawInput);
     auto ajustedMatrix = DataConverter().fillBlank(matrixToAdd);
     

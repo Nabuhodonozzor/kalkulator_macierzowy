@@ -10,10 +10,6 @@ Menu::Menu(std::vector<Matrix> &matrixVector) :
     exitCommand_("exit"){
 }
 
-Menu::~Menu(){
-//    delete command_;
-}
-
 void Menu::initMenu(){  //initalising menu and the working loop
 
     std::string input;
@@ -28,12 +24,11 @@ void Menu::initMenu(){  //initalising menu and the working loop
 }
 
 void Menu::commandPerformer(){
-    try{
-        command_ -> execute(matrixVect_);      //dynamic polymorphism (command pattern)
-    }
-    catch(file_open_error & foe){
-        std::cout << foe.what() << std::endl;
-    }
+    try {command_ -> execute(matrixVect_);}    //dynamic polymorphism (command pattern)
+
+    catch(file_open_error & foe) {std::cout << foe.what() << std::endl;}
+
+    catch(bad_equals & be) {std::cout << be.what() << std::endl;}
 }
 
 void Menu::commandDeterminer(const std::string &command){                   //determinig what operation to perform

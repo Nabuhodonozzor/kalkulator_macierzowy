@@ -4,8 +4,6 @@ Matrix InputAnalyzer::initiateDecompositon(std::string & rawInput){
     
     std::vector<std::string> segmentatedString;
 
-    if(rawInput.find('=') == std::string::npos) throw 1;
-
     segmentatedString.push_back(rawInput.substr(0, rawInput.find('=')));
     segmentatedString.push_back(rawInput.substr(rawInput.find('=') + 1));
 

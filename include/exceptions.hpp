@@ -24,3 +24,9 @@ public:
     
     const std::string what();
 };
+
+class bad_equals : public std::exception{
+
+public:
+    const std::string what();
+};
