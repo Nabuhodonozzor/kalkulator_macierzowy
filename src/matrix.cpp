@@ -46,8 +46,8 @@ Matrix sub_add(const Matrix &leftElement, const Matrix &rightElement, unsigned o
     }
     else{
 
-        std::array<size_t, 2> leftDimensions = {leftRows, leftCols};
-        std::array<size_t, 2> rightDimensions = {rightRows, rightCols};
+        std::array<size_t, 2> leftDimensions{leftRows, leftCols};
+        std::array<size_t, 2> rightDimensions{rightRows, rightCols};
 
         throw unmatching_size(leftElement.name_, leftDimensions, rightElement.name_, rightDimensions, operation_char);
     }
