@@ -39,3 +39,13 @@ const std::string file_open_error::what(){
 const std::string bad_equals::what(){
     return "Couldn't find \'=\' symbol.";
 }
+
+//=====================================================================
+
+//matrix_already_in_vector
+
+matrix_already_in_vector::matrix_already_in_vector(std::string & name) : name_(name){}
+
+const std::string matrix_already_in_vector::what(){
+    return "Matrix with such name: \"" + name_ + "\" already in vector";
+}

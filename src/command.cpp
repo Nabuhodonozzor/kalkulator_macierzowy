@@ -30,6 +30,10 @@ void AddToVectorCommand::execute(MatrixVector & matrixVect){
     if(rawInput.find('=') == std::string::npos) throw bad_equals();
 
     auto matrixToAdd = InputAnalyzer().initiateDecompositon(rawInput);
+    auto nameToCheck = matrixToAdd.getName();
+
+    if(matrixVect.isMatrixInVector(nameToCheck)) throw matrix_already_in_vector(nameToCheck);
+
     auto ajustedMatrix = DataConverter().fillBlank(matrixToAdd);
     
     matrixVect.push_back(ajustedMatrix);

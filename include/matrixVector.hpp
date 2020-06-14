@@ -1,4 +1,5 @@
 #pragma once
+#include <algorithm>
 #include "matrix.hpp"
 
 class MatrixVector{
@@ -7,7 +8,8 @@ private:
 
 public:
     void push_back(Matrix &);
-    Matrix & find(std::string &);
+    Matrix getCertainMatrix(std::string &);
+    bool isMatrixInVector(std::string &);
 
     std::vector<Matrix> getVector();
 };

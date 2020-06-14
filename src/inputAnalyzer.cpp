@@ -7,11 +7,7 @@ Matrix InputAnalyzer::initiateDecompositon(std::string & rawInput){
     segmentatedString.push_back(rawInput.substr(0, rawInput.find('=')));
     segmentatedString.push_back(rawInput.substr(rawInput.find('=') + 1));
 
-    return Matrix(setID(segmentatedString.at(0)), setValues(segmentatedString.at(1)));
-}
-
-std::string InputAnalyzer::setID(std::string &rawIDstring){
-    return rawIDstring;
+    return Matrix(segmentatedString.at(0), setValues(segmentatedString.at(1)));
 }
 
 data_type InputAnalyzer::setValues(std::string &rawDataString){

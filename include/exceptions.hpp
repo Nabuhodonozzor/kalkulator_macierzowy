@@ -31,3 +31,11 @@ class bad_equals : public std::exception{
 public:
     const std::string what();
 };
+
+class matrix_already_in_vector{
+private:
+    std::string name_;
+public:
+    matrix_already_in_vector(std::string &);
+    const std::string what();
+};
