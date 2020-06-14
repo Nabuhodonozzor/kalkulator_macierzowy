@@ -11,6 +11,8 @@ class Command{
 public:
     virtual void execute(MatrixVector &) = 0;
     ~Command();
+
+    std::array<Matrix, 2> getMatricesToOperation(MatrixVector &);
 };
 
 class PrintCommand : public Command{

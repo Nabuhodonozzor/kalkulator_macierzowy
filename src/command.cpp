@@ -80,13 +80,44 @@ void LoadCommand::execute(MatrixVector & matrixVect){
 }
 
 void AdditionCommand::execute(MatrixVector & matrixVect){
-    std::cout << "addition" << std::endl;
+    
+    auto matrixArray = getMatricesToOperation(matrixVect);
+    auto product = sub_add(matrixArray.at(0), matrixArray.at(1), 0);
+    auto productName = product.getName();
+
+    if(matrixVect.isMatrixInVector(productName)) throw matrix_already_in_vector(productName);
+    else matrixVect.push_back(product);
 }
 
 void SubstractionCommand::execute(MatrixVector & matrixVect){
-    std::cout << "substraction" << std::endl;
+
+    auto matrixArray = getMatricesToOperation(matrixVect);
+    auto product = sub_add(matrixArray.at(0), matrixArray.at(1), 1);
+    auto productName = product.getName();
+
+    if(matrixVect.isMatrixInVector(productName)) throw matrix_already_in_vector(productName);
+    else matrixVect.push_back(product);
 }
 
 void NullCommand::execute(MatrixVector & matrixVect){
     std::cout << "Undefined command" << std::endl;
+}
+
+std::array<Matrix, 2> Command::getMatricesToOperation(MatrixVector & matrixVect){
+
+    std::string leftName, rightName;
+
+    std::cout << "Give left matrix name: ";
+    getline(std::cin, leftName);
+    leftName.erase(std::remove_if(leftName.begin(), leftName.end(), ::isspace), leftName.end());
+
+    std::cout << "Give right matrix name:";
+    getline(std::cin, rightName);
+    rightName.erase(std::remove_if(rightName.begin(), rightName.end(), ::isspace), rightName.end());
+
+    auto leftMatrix  = matrixVect.getCertainMatrix(leftName);
+    auto rightMatrix = matrixVect.getCertainMatrix(rightName);
+
+    std::array<Matrix, 2> arrayToReturn = {leftMatrix, rightMatrix};
+    return arrayToReturn;
 }
