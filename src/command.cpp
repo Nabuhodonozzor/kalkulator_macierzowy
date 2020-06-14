@@ -113,7 +113,7 @@ std::array<Matrix, 2> Command::getMatricesToOperation(MatrixVector & matrixVect)
     getline(std::cin, leftName);
     leftName.erase(std::remove_if(leftName.begin(), leftName.end(), ::isspace), leftName.end());
 
-    std::cout << "Give right matrix name or a constant value to add: ";
+    std::cout << "Give right matrix name: ";
     getline(std::cin, rightName);
     rightName.erase(std::remove_if(rightName.begin(), rightName.end(), ::isspace), rightName.end());
 

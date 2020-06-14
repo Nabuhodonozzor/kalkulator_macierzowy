@@ -21,4 +21,5 @@ public:
 
     data_type getValues();
     std::string getName();
+    void setID(std::string &);
 };

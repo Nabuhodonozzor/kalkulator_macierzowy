@@ -5,5 +5,5 @@
 class DataConverter{
 public:
     //nethod filling blank spaces int vectors with zeros
-    Matrix & fillBlank(Matrix &);
+    Matrix fillBlank(Matrix &);
 };

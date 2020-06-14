@@ -23,15 +23,17 @@ Matrix sub_add(const Matrix &leftElement, const Matrix &rightElement, unsigned o
     auto rightRows = rightElement.values_.size();
     auto rightCols = rightElement.values_.at(0).size();
 
+    std::vector<double> rowVect;
+    data_type values;
+
     std::string operation_char;
     if(operation == 0) operation_char = '+';
     else if(operation == 1) operation_char = '-';
 
+
     if((leftRows == rightRows) && (leftCols == rightCols)){
 
         auto newName = leftElement.name_ + " " + operation_char + " " + rightElement.name_;
-        std::vector<double> rowVect;
-        data_type values;
 
         for(auto i = 0; i < leftRows; i++){ 
             for(auto j = 0; j < leftCols; j++){
@@ -41,7 +43,20 @@ Matrix sub_add(const Matrix &leftElement, const Matrix &rightElement, unsigned o
             values.push_back(rowVect);
             rowVect.clear();
         }
-        
+        return Matrix(newName, values);
+    }
+    else if(rightRows == rightCols ==1){
+
+        auto newName = leftElement.name_ + " " + operation_char + " " + std::to_string(rightElement.values_.at(0).at(0));
+
+        for(auto i = 0; i < leftRows; i++){ 
+            for(auto j = 0; j < leftCols; j++){
+                if(operation_char == "+")      rowVect.push_back(leftElement.values_.at(i).at(j) + rightElement.values_.at(0).at(0));
+                else if(operation_char == "-") rowVect.push_back(leftElement.values_.at(i).at(j) - rightElement.values_.at(0).at(0));
+            }
+            values.push_back(rowVect);
+            rowVect.clear();
+        }
         return Matrix(newName, values);
     }
     else{

@@ -1,6 +1,6 @@
 #include "dataConverter.hpp"
 
-Matrix & DataConverter::fillBlank(Matrix & toAdjust){
+Matrix DataConverter::fillBlank(Matrix & toAdjust){
 
     std::vector<size_t> rowSize;
     auto adjustedData = toAdjust.getValues();
@@ -14,6 +14,5 @@ Matrix & DataConverter::fillBlank(Matrix & toAdjust){
         while(adjustedData.at(i).size() < maxItem) adjustedData.at(i).push_back(0);
     }
 
-    static Matrix toReturn(toAdjust.getName(), adjustedData);
-    return toReturn;
+    return Matrix(toAdjust.getName(), adjustedData);
 }
