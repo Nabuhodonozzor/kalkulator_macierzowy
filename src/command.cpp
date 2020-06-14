@@ -68,7 +68,9 @@ void LoadCommand::execute(MatrixVector & matrixVect){
      
     std::string currentlyLoaded, filename("savefile.txt");
     std::ifstream file;
+    matrixVect.clear();
     file.open(filename, std::ios::in);
+    
 
     if(file.is_open()){
         while(getline(file, currentlyLoaded)){
@@ -111,7 +113,7 @@ std::array<Matrix, 2> Command::getMatricesToOperation(MatrixVector & matrixVect)
     getline(std::cin, leftName);
     leftName.erase(std::remove_if(leftName.begin(), leftName.end(), ::isspace), leftName.end());
 
-    std::cout << "Give right matrix name:";
+    std::cout << "Give right matrix name or a constant value to add: ";
     getline(std::cin, rightName);
     rightName.erase(std::remove_if(rightName.begin(), rightName.end(), ::isspace), rightName.end());
 

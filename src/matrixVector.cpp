@@ -29,3 +29,7 @@ bool MatrixVector::isMatrixInVector(std::string & toCheck){
 std::vector<Matrix> MatrixVector::getVector(){
     return matrixVect_;
 }
+
+void MatrixVector::clear(){
+    matrixVect_.clear();
+}

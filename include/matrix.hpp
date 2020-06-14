@@ -14,7 +14,7 @@ private:
 public:
     Matrix(std::string, data_type);
 
-    //function adding or substracting two mastrices
+    //function adding or substracting two matrices
     //operation = 0 - addition
     //operation = 1 - substraction
     friend Matrix sub_add(const Matrix &, const Matrix &, unsigned);

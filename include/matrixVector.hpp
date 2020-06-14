@@ -8,8 +8,9 @@ private:
 
 public:
     void push_back(Matrix &);
-    Matrix getCertainMatrix(std::string &);
     bool isMatrixInVector(std::string &);
+    void clear();
 
+    Matrix getCertainMatrix(std::string &);
     std::vector<Matrix> getVector();
 };

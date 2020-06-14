@@ -15,9 +15,11 @@ public:
     std::array<Matrix, 2> getMatricesToOperation(MatrixVector &);
 };
 
+//command printing the whole vector
 class PrintCommand : public Command{
     void execute(MatrixVector &);
 };
+
 
 class SaveCommand : public Command{
     void execute(MatrixVector &);
