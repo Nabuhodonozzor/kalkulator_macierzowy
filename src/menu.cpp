@@ -2,7 +2,7 @@
 
 Menu::Menu(MatrixVector &matrixVector) : 
     startupCommand_("Matrix Calculator"),
-    printCommand_("print all"),
+    printCommand_("print"),
     addCommand_("add"),
     saveCommand_("save"),
     loadCommand_("load"),
@@ -12,7 +12,7 @@ Menu::Menu(MatrixVector &matrixVector) :
     matrixVect_(matrixVector){
 }
 
-void Menu::initMenu(){  //initalising menu and the working loop
+void Menu::initMenu(){                                  //initalising menu and the working loop
 
     std::string input;
 
@@ -26,15 +26,21 @@ void Menu::initMenu(){  //initalising menu and the working loop
 }
 
 void Menu::commandPerformer(){
-    try {command_ -> execute(matrixVect_);}    //dynamic polymorphism (command pattern)
+    try {command_ -> execute(matrixVect_);}             //dynamic polymorphism (command pattern)
 
-    catch(file_open_error & foe) {std::cout << foe.what() << std::endl;}
+    catch(file_open_error & foe)            {std::cout << foe.what() << std::endl;}
 
-    catch(bad_equals & be) {std::cout << be.what() << std::endl;}
+    catch(bad_equals & be)                  {std::cout << be.what() << std::endl;}
+
+    catch(matrix_already_in_vector & maiv)  {std::cout << maiv.what() << std::endl;}
+
+    catch(unmatching_size & us_add)         {std::cout << us_add.what() << std::endl;}
+
+    catch(no_such_matrix & nsm)             {std::cout << nsm.what() << std::endl;}
 }
 
-void Menu::commandDeterminer(const std::string &command){                   //determinig what operation to perform
-    if(command == printCommand_)                command_ = std::make_unique<PrintCommand>();
+void Menu::commandDeterminer(const std::string &command){   //determinig what operation to perform
+    if     (command == printCommand_)           command_ = std::make_unique<PrintCommand>();
     else if(command == addCommand_)             command_ = std::make_unique<AddToVectorCommand>();
     else if(command == saveCommand_)            command_ = std::make_unique<SaveCommand>();
     else if(command == loadCommand_)            command_ = std::make_unique<LoadCommand>();

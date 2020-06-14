@@ -51,3 +51,13 @@ matrix_already_in_vector::matrix_already_in_vector(std::string & name) : name_(n
 const std::string matrix_already_in_vector::what(){
     return "Matrix with such name: \"" + name_ + "\" already in vector";
 }
+
+//===================================================================
+
+//no_such_matrix
+
+no_such_matrix::no_such_matrix(std::string & name) : name_(name){}
+
+const std::string no_such_matrix::what(){
+    return "Couldn't find matrix " + name_;
+}

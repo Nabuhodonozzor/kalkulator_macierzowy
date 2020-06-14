@@ -9,7 +9,7 @@ Matrix MatrixVector::getCertainMatrix(std::string & matrixToFind){
     for(auto current : matrixVect_){
         if(current.getName() == matrixToFind) return current;
     }
-    throw 1;
+    throw no_such_matrix(matrixToFind);
 }
 
 bool MatrixVector::isMatrixInVector(std::string & toCheck){
