@@ -1,13 +1,15 @@
 #include "menu.hpp"
 
-Menu::Menu(std::vector<Matrix> &matrixVector) : 
-    matrixVect_(matrixVector),
+Menu::Menu(MatrixVector &matrixVector) : 
     startupCommand_("Matrix Calculator"),
     printCommand_("print all"),
     addCommand_("add"),
     saveCommand_("save"),
     loadCommand_("load"),
-    exitCommand_("exit"){
+    additionCommand_("addition"),
+    substractionCommand_("substraction"),
+    exitCommand_("exit"),
+    matrixVect_(matrixVector){
 }
 
 void Menu::initMenu(){  //initalising menu and the working loop
@@ -32,9 +34,11 @@ void Menu::commandPerformer(){
 }
 
 void Menu::commandDeterminer(const std::string &command){                   //determinig what operation to perform
-    if(command == printCommand_)        command_ = std::make_unique<PrintCommand>();
-    else if(command == addCommand_)     command_ = std::make_unique<AddToVectorCommand>();
-    else if(command == saveCommand_)    command_ = std::make_unique<SaveCommand>();
-    else if(command == loadCommand_)    command_ = std::make_unique<LoadCommand>();
-    else                                command_ = std::make_unique<NullCommand>();
+    if(command == printCommand_)                command_ = std::make_unique<PrintCommand>();
+    else if(command == addCommand_)             command_ = std::make_unique<AddToVectorCommand>();
+    else if(command == saveCommand_)            command_ = std::make_unique<SaveCommand>();
+    else if(command == loadCommand_)            command_ = std::make_unique<LoadCommand>();
+    else if(command == additionCommand_)        command_ = std::make_unique<AdditionCommand>();
+    else if(command == substractionCommand_)    command_ = std::make_unique<SubstractionCommand>();
+    else                                        command_ = std::make_unique<NullCommand>();
 }

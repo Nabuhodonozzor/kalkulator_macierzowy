@@ -2,10 +2,12 @@
 
 Command::~Command(){}
 
-void PrintCommand::execute(std::vector<Matrix> & matrixVect){
+void PrintCommand::execute(MatrixVector & matrixVect){
+
+    auto matrixVector = matrixVect.getVector();
 
     std::cout << std::endl;
-    for(auto current : matrixVect){
+    for(auto current : matrixVector){
         std::cout << current.getName() << '=' << std::endl;
         std::cout << std::showpoint;
         for(auto currentRow : current.getValues()){
@@ -18,7 +20,7 @@ void PrintCommand::execute(std::vector<Matrix> & matrixVect){
     }
 }
 
-void AddToVectorCommand::execute(std::vector<Matrix> & matrixVect){
+void AddToVectorCommand::execute(MatrixVector & matrixVect){
 
     std::string rawInput;
 
@@ -33,14 +35,16 @@ void AddToVectorCommand::execute(std::vector<Matrix> & matrixVect){
     matrixVect.push_back(ajustedMatrix);
 }
 
-void SaveCommand::execute(std::vector<Matrix> & matrixVect){
+void SaveCommand::execute(MatrixVector & matrixVect){
+
+    auto matrixVector = matrixVect.getVector();
 
     std::string filename("savefile.txt");
     std::ofstream file;
     file.open(filename, std::ios::out);
 
     if(file.is_open()){
-        for(auto current : matrixVect){
+        for(auto current : matrixVector){
             file << current.getName() << " = ";
             for(auto currentRow : current.getValues()){
                 for(auto currentValue : currentRow){
@@ -55,20 +59,29 @@ void SaveCommand::execute(std::vector<Matrix> & matrixVect){
     else throw file_open_error(filename);
 }
 
-void LoadCommand::execute(std::vector<Matrix> & matrixVect){
-    
+void LoadCommand::execute(MatrixVector & matrixVect){
+     
     std::string currentlyLoaded, filename("savefile.txt");
     std::ifstream file;
     file.open(filename, std::ios::in);
 
     if(file.is_open()){
         while(getline(file, currentlyLoaded)){
-            matrixVect.push_back(InputAnalyzer().initiateDecompositon(currentlyLoaded));
+            auto currentMatrix = InputAnalyzer().initiateDecompositon(currentlyLoaded);
+            matrixVect.push_back(currentMatrix);
         }
     }
     else throw file_open_error(filename);
 }
 
-void NullCommand::execute(std::vector<Matrix> & matrixVect){
+void AdditionCommand::execute(MatrixVector & matrixVect){
+    std::cout << "addition" << std::endl;
+}
+
+void SubstractionCommand::execute(MatrixVector & matrixVect){
+    std::cout << "substraction" << std::endl;
+}
+
+void NullCommand::execute(MatrixVector & matrixVect){
     std::cout << "Undefined command" << std::endl;
 }

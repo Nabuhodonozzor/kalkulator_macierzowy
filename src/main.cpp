@@ -1,9 +1,9 @@
-#include "matrix.hpp"
 #include "menu.hpp"
+#include "matrixVector.hpp"
 
 
 int main(){
-    std::vector<Matrix> matrixVector; 
+    MatrixVector matrixVector; 
 
     Matrix matrix1("adada", {{1,2,3},
                              {4,5,6},
@@ -21,17 +21,20 @@ int main(){
     matrixVector.push_back(matrix3);
 
     try{
-        matrixVector.push_back(sub_add(matrix1, matrix2, 0));
+        auto sa1 = sub_add(matrix1, matrix2, 0);
+        matrixVector.push_back(sa1);
     }
     catch(unmatching_size &us_add){std::cout << us_add.what() << std::endl;}
 
     try{
-        matrixVector.push_back(sub_add(matrix1, matrix3, 0));
+        auto sa2 = sub_add(matrix1, matrix3, 0);
+        matrixVector.push_back(sa2);
     }
     catch(unmatching_size &us_add){std::cout << us_add.what() << std::endl;}
 
     try{
-        matrixVector.push_back(sub_add(matrix1, matrix3, 1));
+        auto sa3 = sub_add(matrix1, matrix3, 1);
+        matrixVector.push_back(sa3);
     }
     catch(unmatching_size &us_add){std::cout << us_add.what() << std::endl;}
 

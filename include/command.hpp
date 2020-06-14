@@ -1,5 +1,5 @@
 #pragma once 
-#include "matrix.hpp"
+#include "matrixVector.hpp"
 #include "inputAnalyzer.hpp"
 #include "dataConverter.hpp"
 #include "exceptions.hpp"
@@ -9,26 +9,34 @@
 
 class Command{
 public:
-    virtual void execute(std::vector<Matrix> &) = 0;
+    virtual void execute(MatrixVector &) = 0;
     ~Command();
 };
 
 class PrintCommand : public Command{
-    void execute(std::vector<Matrix> &);
+    void execute(MatrixVector &);
 };
 
 class SaveCommand : public Command{
-    void execute(std::vector<Matrix> &);
+    void execute(MatrixVector &);
 };
 
 class LoadCommand : public Command{
-    void execute(std::vector<Matrix> &);   
+    void execute(MatrixVector &);   
 };
 
 class AddToVectorCommand : public Command{
-    void execute(std::vector<Matrix> &);
+    void execute(MatrixVector &);
+};
+
+class AdditionCommand : public Command{
+    void execute(MatrixVector &);
+};
+
+class SubstractionCommand : public Command{
+    void execute(MatrixVector &);
 };
 
 class NullCommand : public Command{
-    void execute(std::vector<Matrix> &);
+    void execute(MatrixVector &);
 };
