@@ -26,8 +26,9 @@ void AddToVectorCommand::execute(MatrixVector & matrixVect){
 
     std::cout << "Input: ";
     getline(std::cin, rawInput);
+    auto eq_count = std::count(rawInput.begin(), rawInput.end(), '=');
 
-    if(rawInput.find('=') == std::string::npos) throw bad_equals();
+    if(eq_count != 1) throw bad_equals(eq_count);
 
     auto matrixToAdd = InputAnalyzer().initiateDecompositon(rawInput);
     auto nameToCheck = matrixToAdd.getName();

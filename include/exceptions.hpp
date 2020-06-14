@@ -28,7 +28,10 @@ public:
 };
 
 class bad_equals : public std::exception{
+private:
+    std::ptrdiff_t eq_count_;
 public:
+    bad_equals(std::ptrdiff_t);
     const std::string what();
 };
 

@@ -36,8 +36,10 @@ const std::string file_open_error::what(){
 
 //bad_equals
 
+bad_equals::bad_equals(std::ptrdiff_t eq_count) : eq_count_(eq_count){}
+
 const std::string bad_equals::what(){
-    return "Couldn't find \'=\' symbol.";
+    return "Invalid number of \'=\' symbol ("+ std::to_string(eq_count_) +"). Only one is allowed.";
 }
 
 //=====================================================================
