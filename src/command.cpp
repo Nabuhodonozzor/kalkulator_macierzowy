@@ -5,18 +5,21 @@ Command::~Command(){}
 void PrintCommand::execute(MatrixVector & matrixVect){
 
     auto matrixVector = matrixVect.getVector();
+    if(matrixVector.size() == 0) std::cout << "There are no matrices in vector" << std::endl;
 
-    std::cout << std::endl;
-    for(auto current : matrixVector){
-        std::cout << current.getName() << '=' << std::endl;
-        std::cout << std::showpoint;
-        for(auto currentRow : current.getValues()){
-            for(auto currentValue : currentRow){
-                std::cout << std::setprecision(3) << std::setw(5) << currentValue << ' ';
+    else{
+        std::cout << std::endl;
+        for(auto current : matrixVector){
+            std::cout << current.getName() << '=' << std::endl;
+            std::cout << std::showpoint;
+            for(auto currentRow : current.getValues()){
+                for(auto currentValue : currentRow){
+                    std::cout << std::setprecision(3) << std::setw(5) << currentValue << ' ';
+                }
+                std::cout << std::endl;
             }
             std::cout << std::endl;
         }
-        std::cout << std::endl;
     }
 }
 
