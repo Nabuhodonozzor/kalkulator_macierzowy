@@ -26,7 +26,13 @@ private:
 
 public:
     Menu(MatrixVector &);
+
+    //initialisig menu and the working loop
     void initMenu();
+
+    //performing commands (dynamic polymorphism)
     void commandPerformer();
+
+    //determininig which command to perform
     void commandDeterminer(const std::string &);
 };

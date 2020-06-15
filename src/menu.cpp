@@ -12,7 +12,7 @@ Menu::Menu(MatrixVector &matrixVector) :
     matrixVect_(matrixVector){
 }
 
-void Menu::initMenu(){                                  //initalising menu and the working loop
+void Menu::initMenu(){                                      //initalising menu and the working loop
 
     std::string input;
 
@@ -26,7 +26,7 @@ void Menu::initMenu(){                                  //initalising menu and t
 }
 
 void Menu::commandPerformer(){
-    try {command_ -> execute(matrixVect_);}             //dynamic polymorphism (command pattern)
+    try {command_ -> execute(matrixVect_);}                 //dynamic polymorphism (command pattern)
 
     catch(file_open_error & foe)            {std::cout << foe.what() << std::endl;}
 

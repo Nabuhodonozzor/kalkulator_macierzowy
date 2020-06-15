@@ -15,7 +15,6 @@ class unmatching_size : public std::exception{
 
 public:
     unmatching_size(const std::string &, std::size_t &, std::size_t &, const std::string &, std::size_t &, std::size_t &, std::string);
-
     const std::string what();
 };
 
@@ -25,14 +24,13 @@ class file_open_error : public std::exception{
 
 public:
     file_open_error(std::string &);
-    
     const std::string what();
 };
 
 //exception thrown when wrong number of = is in the input string
 class bad_equals : public std::exception{
-    std::ptrdiff_t eq_count_;    std::array<size_t, 2> firstDimensions_;
-    std::array<size_t, 2> secondDimensions_;
+    std::ptrdiff_t eq_count_;    
+
 public:
     bad_equals(std::ptrdiff_t);
     const std::string what();
