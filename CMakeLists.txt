@@ -4,6 +4,8 @@ cmake_minimum_required(VERSION 3.10)
 # set project name
 project(Matrix)
 
+add_compile_options(-Wall)
+
 # adding executables
 file(GLOB_RECURSE all_src "src/*.cpp")
 add_executable(Matrix ${all_src})
