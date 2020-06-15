@@ -7,12 +7,14 @@
 class unmatching_size : public std::exception{
     std::string firstID_;
     std::string secondID_;
-    std::array<size_t, 2> firstDimensions_;
-    std::array<size_t, 2> secondDimensions_;
+    std::size_t firstRows_;
+    std::size_t firstCols_;
+    std::size_t secondRows_;
+    std::size_t secondCols_;
     std::string operand_;
 
 public:
-    unmatching_size(const std::string &, std::array<size_t, 2> &, const std::string &, std::array<size_t, 2> &, std::string);
+    unmatching_size(const std::string &, std::size_t &, std::size_t &, const std::string &, std::size_t &, std::size_t &, std::string);
 
     const std::string what();
 };
@@ -29,7 +31,8 @@ public:
 
 //exception thrown when wrong number of = is in the input string
 class bad_equals : public std::exception{
-    std::ptrdiff_t eq_count_;
+    std::ptrdiff_t eq_count_;    std::array<size_t, 2> firstDimensions_;
+    std::array<size_t, 2> secondDimensions_;
 public:
     bad_equals(std::ptrdiff_t);
     const std::string what();

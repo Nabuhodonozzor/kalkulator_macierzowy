@@ -2,19 +2,21 @@
 
 // unmatching_size exception
 
-unmatching_size::unmatching_size(const std::string & firstID, std::array<size_t, 2> & firstDimensions, const std::string & secondID, std::array<size_t, 2> & secondDimensions, std::string operand) :
+unmatching_size::unmatching_size(const std::string & firstID, std::size_t & firstRows, std::size_t & firstCols, const std::string & secondID, std::size_t & secondRows, std::size_t & secondCols, std::string operand) :
     firstID_(firstID),
-    firstDimensions_(firstDimensions),
+    firstRows_(firstRows),
+    firstCols_(firstCols),
     secondID_(secondID),
-    secondDimensions_(secondDimensions),
+    secondRows_(secondRows),
+    secondCols_(secondCols),
     operand_(operand){
 
 }
 
 const std::string unmatching_size::what(){
 
-    auto firstDimsStr = '[' + std::to_string(firstDimensions_.at(0)) + 'x' + std::to_string(firstDimensions_.at(1)) + ']';
-    auto secondDimsStr = '[' + std::to_string(secondDimensions_.at(0)) + 'x' + std::to_string(secondDimensions_.at(1)) + ']';
+    auto firstDimsStr = '[' + std::to_string(firstRows_) + 'x' + std::to_string(firstCols_) + ']';
+    auto secondDimsStr = '[' + std::to_string(secondRows_) + 'x' + std::to_string(secondCols_) + ']';
     auto matrixIfno = "Matrices :\n\t" + firstID_ + " " + firstDimsStr + " and " + secondID_ + " " + secondDimsStr;
     auto errorInfo = "\n\tare not fit to perform operation \"" + operand_ + '\"';
     auto returnStr = matrixIfno + errorInfo;
