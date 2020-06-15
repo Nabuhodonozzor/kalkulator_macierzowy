@@ -2,7 +2,6 @@
 #include "exceptions.hpp"
 #include <string>
 #include <vector>
-#include <array>
 
 using data_type = std::vector<std::vector<double>>;
 

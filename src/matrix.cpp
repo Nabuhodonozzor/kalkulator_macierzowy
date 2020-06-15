@@ -35,8 +35,8 @@ Matrix sub_add(const Matrix &leftElement, const Matrix &rightElement, unsigned o
 
         auto newName = leftElement.name_ + " " + operation_char + " " + rightElement.name_;
 
-        for(auto i = 0; i < leftRows; i++){ 
-            for(auto j = 0; j < leftCols; j++){
+        for(std::size_t i = 0; i < leftRows; i++){ 
+            for(std::size_t j = 0; j < leftCols; j++){
                 if(operation_char == "+")      rowVect.push_back(leftElement.values_.at(i).at(j) + rightElement.values_.at(i).at(j));
                 else if(operation_char == "-") rowVect.push_back(leftElement.values_.at(i).at(j) - rightElement.values_.at(i).at(j));
             }
@@ -45,12 +45,12 @@ Matrix sub_add(const Matrix &leftElement, const Matrix &rightElement, unsigned o
         }
         return Matrix(newName, values);
     }
-    else if(rightRows == rightCols ==1){
+    else if((rightRows ==1) && (rightCols ==1)){
 
         auto newName = leftElement.name_ + " " + operation_char + " " + std::to_string(rightElement.values_.at(0).at(0));
 
-        for(auto i = 0; i < leftRows; i++){ 
-            for(auto j = 0; j < leftCols; j++){
+        for(std::size_t i = 0; i < leftRows; i++){ 
+            for(std::size_t j = 0; j < leftCols; j++){
                 if(operation_char == "+")      rowVect.push_back(leftElement.values_.at(i).at(j) + rightElement.values_.at(0).at(0));
                 else if(operation_char == "-") rowVect.push_back(leftElement.values_.at(i).at(j) - rightElement.values_.at(0).at(0));
             }
@@ -59,12 +59,6 @@ Matrix sub_add(const Matrix &leftElement, const Matrix &rightElement, unsigned o
         }
         return Matrix(newName, values);
     }
-    else{
-
-        std::array<size_t, 2> leftDimensions{leftRows, leftCols};
-        std::array<size_t, 2> rightDimensions{rightRows, rightCols};
-
-        throw unmatching_size(leftElement.name_, leftDimensions, rightElement.name_, rightDimensions, operation_char);
-    }
+    else throw unmatching_size(leftElement.name_, leftRows, leftCols, rightElement.name_, rightRows, rightCols, operation_char);
 }
 

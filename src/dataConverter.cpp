@@ -10,7 +10,7 @@ Matrix DataConverter::fillBlank(Matrix & toAdjust){
     auto const maxItemIter = std::max_element(rowSize.begin(), rowSize.end());
     auto const maxItem = *maxItemIter;
 
-    for(int i = 0; i < adjustedData.size(); i++){
+    for(auto i = 0; i < adjustedData.size(); i++){
         while(adjustedData.at(i).size() < maxItem) adjustedData.at(i).push_back(0);
     }
 
