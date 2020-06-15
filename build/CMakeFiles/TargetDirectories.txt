@@ -1,0 +1,3 @@
+/home/paweld/Dokumenty/C++/lepszy_kalkulator/build/CMakeFiles/rebuild_cache.dir
+/home/paweld/Dokumenty/C++/lepszy_kalkulator/build/CMakeFiles/edit_cache.dir
+/home/paweld/Dokumenty/C++/lepszy_kalkulator/build/CMakeFiles/Matrix.dir
