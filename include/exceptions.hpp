@@ -6,9 +6,9 @@
 //exception thrown when matrices are not fit to perform certain operations
 class unmatching_size : public std::exception{
     std::string firstID_;
-    std::string secondID_;
     std::size_t firstRows_;
     std::size_t firstCols_;
+    std::string secondID_;
     std::size_t secondRows_;
     std::size_t secondCols_;
     std::string operand_;

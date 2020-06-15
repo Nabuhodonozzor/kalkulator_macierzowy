@@ -12,7 +12,7 @@ Menu::Menu(MatrixVector &matrixVector) :
     matrixVect_(matrixVector){
 }
 
-void Menu::initMenu(){                                      //initalising menu and the working loop
+void Menu::initMenu(){                                      
 
     std::string input;
 
@@ -26,7 +26,7 @@ void Menu::initMenu(){                                      //initalising menu a
 }
 
 void Menu::commandPerformer(){
-    try {command_ -> execute(matrixVect_);}                 //dynamic polymorphism (command pattern)
+    try {command_ -> execute(matrixVect_);}                 
 
     catch(file_open_error & foe)            {std::cout << foe.what() << std::endl;}
 
@@ -39,7 +39,7 @@ void Menu::commandPerformer(){
     catch(no_such_matrix & nsm)             {std::cout << nsm.what() << std::endl;}
 }
 
-void Menu::commandDeterminer(const std::string &command){   //determinig what operation to perform
+void Menu::commandDeterminer(const std::string &command){   
     if     (command == printCommand_)           command_ = std::make_unique<PrintCommand>();
     else if(command == addCommand_)             command_ = std::make_unique<AddToVectorCommand>();
     else if(command == saveCommand_)            command_ = std::make_unique<SaveCommand>();

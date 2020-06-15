@@ -31,7 +31,7 @@ data_type InputAnalyzer::setValues(std::string &rawDataString){
                 rowValues.push_back(currentValue);
                 current.erase(0, pos);
                 }
-            catch(const std::invalid_argument end_of_values){break;}
+            catch(const std::invalid_argument){break;}
         }
         values.push_back(rowValues);
     }
