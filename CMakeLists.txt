@@ -10,8 +10,9 @@ add_compile_options(-Wall)
 file(GLOB_RECURSE all_src "src/*.cpp")
 add_executable(Matrix ${all_src})
 
-#adding headers
-include_directories(include)
+# adding headers
+file(GLOB_RECURSE all_hpp "include/*.hpp")
+# add_executable(Matrix ${all_hpp})
 
 # C++ standard 
 set(CMAKE_CXX_STANDARD 17)

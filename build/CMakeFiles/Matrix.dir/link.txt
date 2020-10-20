@@ -1,1 +1,3 @@
-/usr/bin/c++     CMakeFiles/Matrix.dir/src/command.cpp.o CMakeFiles/Matrix.dir/src/dataConverter.cpp.o CMakeFiles/Matrix.dir/src/exceptions.cpp.o CMakeFiles/Matrix.dir/src/inputAnalyzer.cpp.o CMakeFiles/Matrix.dir/src/main.cpp.o CMakeFiles/Matrix.dir/src/matrix.cpp.o CMakeFiles/Matrix.dir/src/matrixVector.cpp.o CMakeFiles/Matrix.dir/src/menu.cpp.o  -o Matrix 
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\Matrix.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\Matrix.dir/objects.a @CMakeFiles\Matrix.dir\objects1.rsp
+C:\MinGW\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\Matrix.dir/objects.a -Wl,--no-whole-archive -o Matrix.exe -Wl,--out-implib,libMatrix.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Matrix.dir\linklibs.rsp

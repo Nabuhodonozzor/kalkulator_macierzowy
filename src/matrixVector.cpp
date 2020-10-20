@@ -1,4 +1,4 @@
-#include "matrixVector.hpp"
+#include "../include/matrixVector.hpp"
 
 void MatrixVector::push_back(Matrix & matrixToAdd){
     matrixVect_.push_back(matrixToAdd);

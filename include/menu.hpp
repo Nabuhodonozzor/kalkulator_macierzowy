@@ -1,14 +1,8 @@
 #pragma once
 #include "matrixVector.hpp"
-#include "inputAnalyzer.hpp"
 #include "command.hpp"
-#include <string>
 #include <iostream>
-#include <vector>
 #include <memory>
-
-
-
 
 class Menu{
 private:

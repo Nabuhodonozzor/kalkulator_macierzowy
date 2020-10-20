@@ -4,20 +4,19 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/paweld/Dokumenty/C++/lepszy_kalkulator/src/command.cpp" "/home/paweld/Dokumenty/C++/lepszy_kalkulator/build/CMakeFiles/Matrix.dir/src/command.cpp.o"
-  "/home/paweld/Dokumenty/C++/lepszy_kalkulator/src/dataConverter.cpp" "/home/paweld/Dokumenty/C++/lepszy_kalkulator/build/CMakeFiles/Matrix.dir/src/dataConverter.cpp.o"
-  "/home/paweld/Dokumenty/C++/lepszy_kalkulator/src/exceptions.cpp" "/home/paweld/Dokumenty/C++/lepszy_kalkulator/build/CMakeFiles/Matrix.dir/src/exceptions.cpp.o"
-  "/home/paweld/Dokumenty/C++/lepszy_kalkulator/src/inputAnalyzer.cpp" "/home/paweld/Dokumenty/C++/lepszy_kalkulator/build/CMakeFiles/Matrix.dir/src/inputAnalyzer.cpp.o"
-  "/home/paweld/Dokumenty/C++/lepszy_kalkulator/src/main.cpp" "/home/paweld/Dokumenty/C++/lepszy_kalkulator/build/CMakeFiles/Matrix.dir/src/main.cpp.o"
-  "/home/paweld/Dokumenty/C++/lepszy_kalkulator/src/matrix.cpp" "/home/paweld/Dokumenty/C++/lepszy_kalkulator/build/CMakeFiles/Matrix.dir/src/matrix.cpp.o"
-  "/home/paweld/Dokumenty/C++/lepszy_kalkulator/src/matrixVector.cpp" "/home/paweld/Dokumenty/C++/lepszy_kalkulator/build/CMakeFiles/Matrix.dir/src/matrixVector.cpp.o"
-  "/home/paweld/Dokumenty/C++/lepszy_kalkulator/src/menu.cpp" "/home/paweld/Dokumenty/C++/lepszy_kalkulator/build/CMakeFiles/Matrix.dir/src/menu.cpp.o"
+  "C:/Users/Nabuhodonozzor/Documents/C_C++/lepszy kalkuklator/src/command.cpp" "C:/Users/Nabuhodonozzor/Documents/C_C++/lepszy kalkuklator/build/CMakeFiles/Matrix.dir/src/command.cpp.obj"
+  "C:/Users/Nabuhodonozzor/Documents/C_C++/lepszy kalkuklator/src/dataConverter.cpp" "C:/Users/Nabuhodonozzor/Documents/C_C++/lepszy kalkuklator/build/CMakeFiles/Matrix.dir/src/dataConverter.cpp.obj"
+  "C:/Users/Nabuhodonozzor/Documents/C_C++/lepszy kalkuklator/src/exceptions.cpp" "C:/Users/Nabuhodonozzor/Documents/C_C++/lepszy kalkuklator/build/CMakeFiles/Matrix.dir/src/exceptions.cpp.obj"
+  "C:/Users/Nabuhodonozzor/Documents/C_C++/lepszy kalkuklator/src/inputAnalyzer.cpp" "C:/Users/Nabuhodonozzor/Documents/C_C++/lepszy kalkuklator/build/CMakeFiles/Matrix.dir/src/inputAnalyzer.cpp.obj"
+  "C:/Users/Nabuhodonozzor/Documents/C_C++/lepszy kalkuklator/src/main.cpp" "C:/Users/Nabuhodonozzor/Documents/C_C++/lepszy kalkuklator/build/CMakeFiles/Matrix.dir/src/main.cpp.obj"
+  "C:/Users/Nabuhodonozzor/Documents/C_C++/lepszy kalkuklator/src/matrix.cpp" "C:/Users/Nabuhodonozzor/Documents/C_C++/lepszy kalkuklator/build/CMakeFiles/Matrix.dir/src/matrix.cpp.obj"
+  "C:/Users/Nabuhodonozzor/Documents/C_C++/lepszy kalkuklator/src/matrixVector.cpp" "C:/Users/Nabuhodonozzor/Documents/C_C++/lepszy kalkuklator/build/CMakeFiles/Matrix.dir/src/matrixVector.cpp.obj"
+  "C:/Users/Nabuhodonozzor/Documents/C_C++/lepszy kalkuklator/src/menu.cpp" "C:/Users/Nabuhodonozzor/Documents/C_C++/lepszy kalkuklator/build/CMakeFiles/Matrix.dir/src/menu.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../include"
   )
 
 # Targets to which this target links.

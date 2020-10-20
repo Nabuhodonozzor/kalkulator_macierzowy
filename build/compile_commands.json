@@ -1,0 +1,42 @@
+[
+{
+  "directory": "C:/Users/Nabuhodonozzor/Documents/C_C++/lepszy kalkuklator/build",
+  "command": "C:\\MinGW\\bin\\g++.exe   -g -Wall -o CMakeFiles\\Matrix.dir\\src\\command.cpp.obj -c \"C:\\Users\\Nabuhodonozzor\\Documents\\C_C++\\lepszy kalkuklator\\src\\command.cpp\"",
+  "file": "C:/Users/Nabuhodonozzor/Documents/C_C++/lepszy kalkuklator/src/command.cpp"
+},
+{
+  "directory": "C:/Users/Nabuhodonozzor/Documents/C_C++/lepszy kalkuklator/build",
+  "command": "C:\\MinGW\\bin\\g++.exe   -g -Wall -o CMakeFiles\\Matrix.dir\\src\\dataConverter.cpp.obj -c \"C:\\Users\\Nabuhodonozzor\\Documents\\C_C++\\lepszy kalkuklator\\src\\dataConverter.cpp\"",
+  "file": "C:/Users/Nabuhodonozzor/Documents/C_C++/lepszy kalkuklator/src/dataConverter.cpp"
+},
+{
+  "directory": "C:/Users/Nabuhodonozzor/Documents/C_C++/lepszy kalkuklator/build",
+  "command": "C:\\MinGW\\bin\\g++.exe   -g -Wall -o CMakeFiles\\Matrix.dir\\src\\exceptions.cpp.obj -c \"C:\\Users\\Nabuhodonozzor\\Documents\\C_C++\\lepszy kalkuklator\\src\\exceptions.cpp\"",
+  "file": "C:/Users/Nabuhodonozzor/Documents/C_C++/lepszy kalkuklator/src/exceptions.cpp"
+},
+{
+  "directory": "C:/Users/Nabuhodonozzor/Documents/C_C++/lepszy kalkuklator/build",
+  "command": "C:\\MinGW\\bin\\g++.exe   -g -Wall -o CMakeFiles\\Matrix.dir\\src\\inputAnalyzer.cpp.obj -c \"C:\\Users\\Nabuhodonozzor\\Documents\\C_C++\\lepszy kalkuklator\\src\\inputAnalyzer.cpp\"",
+  "file": "C:/Users/Nabuhodonozzor/Documents/C_C++/lepszy kalkuklator/src/inputAnalyzer.cpp"
+},
+{
+  "directory": "C:/Users/Nabuhodonozzor/Documents/C_C++/lepszy kalkuklator/build",
+  "command": "C:\\MinGW\\bin\\g++.exe   -g -Wall -o CMakeFiles\\Matrix.dir\\src\\main.cpp.obj -c \"C:\\Users\\Nabuhodonozzor\\Documents\\C_C++\\lepszy kalkuklator\\src\\main.cpp\"",
+  "file": "C:/Users/Nabuhodonozzor/Documents/C_C++/lepszy kalkuklator/src/main.cpp"
+},
+{
+  "directory": "C:/Users/Nabuhodonozzor/Documents/C_C++/lepszy kalkuklator/build",
+  "command": "C:\\MinGW\\bin\\g++.exe   -g -Wall -o CMakeFiles\\Matrix.dir\\src\\matrix.cpp.obj -c \"C:\\Users\\Nabuhodonozzor\\Documents\\C_C++\\lepszy kalkuklator\\src\\matrix.cpp\"",
+  "file": "C:/Users/Nabuhodonozzor/Documents/C_C++/lepszy kalkuklator/src/matrix.cpp"
+},
+{
+  "directory": "C:/Users/Nabuhodonozzor/Documents/C_C++/lepszy kalkuklator/build",
+  "command": "C:\\MinGW\\bin\\g++.exe   -g -Wall -o CMakeFiles\\Matrix.dir\\src\\matrixVector.cpp.obj -c \"C:\\Users\\Nabuhodonozzor\\Documents\\C_C++\\lepszy kalkuklator\\src\\matrixVector.cpp\"",
+  "file": "C:/Users/Nabuhodonozzor/Documents/C_C++/lepszy kalkuklator/src/matrixVector.cpp"
+},
+{
+  "directory": "C:/Users/Nabuhodonozzor/Documents/C_C++/lepszy kalkuklator/build",
+  "command": "C:\\MinGW\\bin\\g++.exe   -g -Wall -o CMakeFiles\\Matrix.dir\\src\\menu.cpp.obj -c \"C:\\Users\\Nabuhodonozzor\\Documents\\C_C++\\lepszy kalkuklator\\src\\menu.cpp\"",
+  "file": "C:/Users/Nabuhodonozzor/Documents/C_C++/lepszy kalkuklator/src/menu.cpp"
+}
+]

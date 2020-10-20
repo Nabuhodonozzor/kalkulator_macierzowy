@@ -1,4 +1,4 @@
-#include "inputAnalyzer.hpp"
+#include "../include/inputAnalyzer.hpp"
 
 Matrix InputAnalyzer::initiateDecompositon(std::string & rawInput){
     

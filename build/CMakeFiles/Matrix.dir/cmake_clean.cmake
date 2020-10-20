@@ -1,14 +1,16 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Matrix.dir/src/command.cpp.o"
-  "CMakeFiles/Matrix.dir/src/dataConverter.cpp.o"
-  "CMakeFiles/Matrix.dir/src/exceptions.cpp.o"
-  "CMakeFiles/Matrix.dir/src/inputAnalyzer.cpp.o"
-  "CMakeFiles/Matrix.dir/src/main.cpp.o"
-  "CMakeFiles/Matrix.dir/src/matrix.cpp.o"
-  "CMakeFiles/Matrix.dir/src/matrixVector.cpp.o"
-  "CMakeFiles/Matrix.dir/src/menu.cpp.o"
-  "Matrix"
+  "CMakeFiles/Matrix.dir/src/command.cpp.obj"
+  "CMakeFiles/Matrix.dir/src/dataConverter.cpp.obj"
+  "CMakeFiles/Matrix.dir/src/exceptions.cpp.obj"
+  "CMakeFiles/Matrix.dir/src/inputAnalyzer.cpp.obj"
+  "CMakeFiles/Matrix.dir/src/main.cpp.obj"
+  "CMakeFiles/Matrix.dir/src/matrix.cpp.obj"
+  "CMakeFiles/Matrix.dir/src/matrixVector.cpp.obj"
+  "CMakeFiles/Matrix.dir/src/menu.cpp.obj"
+  "Matrix.exe"
+  "Matrix.exe.manifest"
   "Matrix.pdb"
+  "libMatrix.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

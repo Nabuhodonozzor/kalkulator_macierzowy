@@ -1,4 +1,4 @@
-#include "dataConverter.hpp"
+#include "../include/dataConverter.hpp"
 
 Matrix DataConverter::fillBlank(Matrix & toAdjust){
 

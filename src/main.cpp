@@ -1,5 +1,5 @@
-#include "menu.hpp"
-#include "matrixVector.hpp"
+#include "../include/menu.hpp"
+#include "../include/matrixVector.hpp"
 
 
 int main(){

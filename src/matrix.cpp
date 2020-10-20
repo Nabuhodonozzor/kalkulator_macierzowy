@@ -1,4 +1,4 @@
-#include "matrix.hpp"
+#include "../include/matrix.hpp"
 
 
 Matrix::Matrix(std::string setName, data_type setValues = {{0}}) :

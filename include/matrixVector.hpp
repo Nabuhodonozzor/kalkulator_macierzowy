@@ -1,6 +1,6 @@
 #pragma once
-#include <algorithm>
 #include "matrix.hpp"
+#include <algorithm>
 
 class MatrixVector{
 private:

@@ -1,4 +1,4 @@
-#include "menu.hpp"
+#include "../include/menu.hpp"
 
 Menu::Menu(MatrixVector &matrixVector) : 
     startupCommand_("Matrix Calculator"),
